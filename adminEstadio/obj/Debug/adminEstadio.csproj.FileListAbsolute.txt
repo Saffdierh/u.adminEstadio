@@ -1,0 +1,8 @@
+C:\Users\Saff\source\repos\adminEstadio\adminEstadio\obj\Debug\adminEstadio.csprojAssemblyReference.cache
+C:\Users\Saff\source\repos\adminEstadio\adminEstadio\obj\Debug\adminEstadio.empleado.resources
+C:\Users\Saff\source\repos\adminEstadio\adminEstadio\obj\Debug\adminEstadio.login.resources
+C:\Users\Saff\source\repos\adminEstadio\adminEstadio\obj\Debug\adminEstadio.mainWindow.resources
+C:\Users\Saff\source\repos\adminEstadio\adminEstadio\obj\Debug\adminEstadio.Properties.Resources.resources
+C:\Users\Saff\source\repos\adminEstadio\adminEstadio\obj\Debug\adminEstadio.splash.resources
+C:\Users\Saff\source\repos\adminEstadio\adminEstadio\obj\Debug\adminEstadio.csproj.GenerateResource.cache
+C:\Users\visual\Documents\BDA\u.adminEstadio-master\adminEstadio\bin\Debug\adminEstadio.exe.config
