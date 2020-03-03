@@ -11,6 +11,11 @@ namespace adminEstadio
     {
 
         public static SqlConnection ConnSql;
+        public static EmpleadoStructure emConfig;
+        public struct EmpleadoStructure
+        {
+            public string userId, nombre, apaterno, amaterno, nomCategoria;
+        }
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>

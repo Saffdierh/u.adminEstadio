@@ -32,7 +32,7 @@ namespace adminEstadio
         {
             Program.ConnSql = new SqlConnection(@"Server=DESKTOP-H9R0K01\SQLEXPRESS; Database=adminEstadioAlt; Trusted_Connection=True;");
             Program.ConnSql.Open();
-            hora.Text = String.Format("{0:HH:mm:ss}", DateTime.Now);
+            hora.Text = string.Format("{0:HH:mm:ss}", DateTime.Now);
             fecha.Text = DateTime.Now.ToLongDateString();
 
             timer1.Interval = 1000;
