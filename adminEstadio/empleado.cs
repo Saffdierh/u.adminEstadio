@@ -13,6 +13,7 @@ namespace adminEstadio
 {
     public partial class empleado : Form
     {
+        static string varFoto;
         public empleado()
         {
             InitializeComponent();
@@ -20,6 +21,8 @@ namespace adminEstadio
 
         private void empleado_Load(object sender, EventArgs e)
         {
+            Program.ConnSql = new SqlConnection(@"server=CC1-ISC-24-PC; Database=Empleados; Trusted_Connection = True;");
+            Program.ConnSql.Open();
             llenarcategoria();
         }
         public void llenarcategoria()
@@ -100,6 +103,39 @@ namespace adminEstadio
                     }
                 }
             }
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawRectangle(Pens.Black, new Rectangle(10, 10, 400, 600));
+            e.Graphics.DrawImage(foto.Image, 90, 30);
+
+            Font Fuente = new Font("Arial", 14, FontStyle.Bold);
+
+            e.Graphics.DrawString("Nombre: " + nombre.Text.Trim() + " " + apellidoPat.Text.Trim(), Fuente, Brushes.Black,
+                new Point(50, 260));
+
+            e.Graphics.DrawString("Categoria : " + categoria.Text, Fuente, Brushes.Black, new Point(58, 246));
+
+            e.Graphics.DrawString("Empleado : ", Fuente, Brushes.Black, new Point(50, 460));
+
+            Fuente = new Font("ABC C39 Medium Text", 16, FontStyle.Regular);
+        }
+
+        private void buscarFoto_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            if (openFileDialog1.FileName.ToString().Trim() != "")
+            {
+                varFoto = openFileDialog1.FileName.ToString();
+                foto.Image = Image.FromFile(varFoto);
+            }
+        }
+
+        private void imprimir_Click(object sender, EventArgs e)
+        {
+            printDialog1.ShowDialog();
+            printPreviewDialog1.ShowDialog();
         }
     }
 }

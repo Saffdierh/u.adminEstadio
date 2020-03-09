@@ -37,5 +37,13 @@ namespace adminEstadio
         {
 
         }
+
+        private void ok_Click_1(object sender, EventArgs e)
+        {
+            mainWindow mainWindow = new mainWindow();
+            //frmEm.MdiParent = this;
+            mainWindow.Show();
+            Visible = false;
+        }
     }
 }

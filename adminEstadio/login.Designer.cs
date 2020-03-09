@@ -32,8 +32,8 @@
             this.contraseña = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ok = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,6 +69,16 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Contraseña:";
             // 
+            // ok
+            // 
+            this.ok.Location = new System.Drawing.Point(170, 141);
+            this.ok.Name = "ok";
+            this.ok.Size = new System.Drawing.Size(212, 23);
+            this.ok.TabIndex = 5;
+            this.ok.Text = "Iniciar Sesion";
+            this.ok.UseVisualStyleBackColor = true;
+            this.ok.Click += new System.EventHandler(this.ok_Click_1);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::adminEstadio.Properties.Resources.fsadfa;
@@ -78,15 +88,6 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.UseWaitCursor = true;
-            // 
-            // ok
-            // 
-            this.ok.Location = new System.Drawing.Point(170, 141);
-            this.ok.Name = "ok";
-            this.ok.Size = new System.Drawing.Size(212, 23);
-            this.ok.TabIndex = 5;
-            this.ok.Text = "Iniciar Sesion";
-            this.ok.UseVisualStyleBackColor = true;
             // 
             // login
             // 

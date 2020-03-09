@@ -32,11 +32,11 @@ namespace adminEstadio
         {
             Program.ConnSql = new SqlConnection(@"Server=DESKTOP-H9R0K01\SQLEXPRESS; Database=adminEstadioAlt; Trusted_Connection=True;");
             Program.ConnSql.Open();
-            hora.Text = String.Format("{0:HH:mm:ss}", DateTime.Now);
+            /*hora.Text = String.Format("{0:HH:mm:ss}", DateTime.Now);
             fecha.Text = DateTime.Now.ToLongDateString();
 
             timer1.Interval = 1000;
-            timer1.Start();
+            timer1.Start();*/
         }
 
         private void hora_Click(object sender, EventArgs e)
@@ -71,6 +71,12 @@ namespace adminEstadio
         private void salirToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            acercaDe Acerca = new acercaDe();
+            Acerca.Show();
         }
     }
 }

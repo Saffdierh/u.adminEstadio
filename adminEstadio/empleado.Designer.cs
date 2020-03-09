@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(empleado));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.contraseña = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.usuario = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.categoria = new System.Windows.Forms.ComboBox();
             this.fechaIng = new System.Windows.Forms.ComboBox();
@@ -59,9 +60,14 @@
             this.salir = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buscarFoto = new System.Windows.Forms.Button();
             this.buscar = new System.Windows.Forms.Button();
             this.foto = new System.Windows.Forms.PictureBox();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.imprimir = new System.Windows.Forms.Button();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto)).BeginInit();
             this.SuspendLayout();
@@ -69,9 +75,9 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.LightGreen;
-            this.groupBox1.Controls.Add(this.textBox10);
+            this.groupBox1.Controls.Add(this.contraseña);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.textBox9);
+            this.groupBox1.Controls.Add(this.usuario);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Location = new System.Drawing.Point(337, 221);
             this.groupBox1.Name = "groupBox1";
@@ -80,12 +86,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Acceso";
             // 
-            // textBox10
+            // contraseña
             // 
-            this.textBox10.Location = new System.Drawing.Point(163, 93);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 1;
+            this.contraseña.Location = new System.Drawing.Point(163, 93);
+            this.contraseña.Name = "contraseña";
+            this.contraseña.Size = new System.Drawing.Size(100, 20);
+            this.contraseña.TabIndex = 1;
             // 
             // label13
             // 
@@ -96,12 +102,12 @@
             this.label13.TabIndex = 2;
             this.label13.Text = "Contraseña";
             // 
-            // textBox9
+            // usuario
             // 
-            this.textBox9.Location = new System.Drawing.Point(163, 38);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 1;
+            this.usuario.Location = new System.Drawing.Point(163, 38);
+            this.usuario.Name = "usuario";
+            this.usuario.Size = new System.Drawing.Size(100, 20);
+            this.usuario.TabIndex = 1;
             // 
             // label12
             // 
@@ -293,7 +299,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(613, 393);
+            this.button6.Location = new System.Drawing.Point(500, 393);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 9;
@@ -302,7 +308,7 @@
             // 
             // salir
             // 
-            this.salir.Location = new System.Drawing.Point(429, 393);
+            this.salir.Location = new System.Drawing.Point(356, 393);
             this.salir.Name = "salir";
             this.salir.Size = new System.Drawing.Size(75, 23);
             this.salir.TabIndex = 8;
@@ -312,7 +318,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(253, 393);
+            this.button4.Location = new System.Drawing.Point(209, 393);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 7;
@@ -328,14 +334,15 @@
             this.button3.Text = "Agregar";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buscarFoto
             // 
-            this.button2.Location = new System.Drawing.Point(484, 180);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Buscar foto";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buscarFoto.Location = new System.Drawing.Point(484, 180);
+            this.buscarFoto.Name = "buscarFoto";
+            this.buscarFoto.Size = new System.Drawing.Size(75, 23);
+            this.buscarFoto.TabIndex = 10;
+            this.buscarFoto.Text = "Buscar foto";
+            this.buscarFoto.UseVisualStyleBackColor = true;
+            this.buscarFoto.Click += new System.EventHandler(this.buscarFoto_Click);
             // 
             // buscar
             // 
@@ -354,6 +361,38 @@
             this.foto.Size = new System.Drawing.Size(150, 150);
             this.foto.TabIndex = 34;
             this.foto.TabStop = false;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // imprimir
+            // 
+            this.imprimir.Location = new System.Drawing.Point(620, 393);
+            this.imprimir.Name = "imprimir";
+            this.imprimir.Size = new System.Drawing.Size(75, 23);
+            this.imprimir.TabIndex = 9;
+            this.imprimir.Text = "Imprimir";
+            this.imprimir.UseVisualStyleBackColor = true;
+            this.imprimir.Click += new System.EventHandler(this.imprimir_Click);
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // empleado
             // 
@@ -384,11 +423,12 @@
             this.Controls.Add(this.telefono);
             this.Controls.Add(this.direccion);
             this.Controls.Add(this.id);
+            this.Controls.Add(this.imprimir);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.salir);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buscarFoto);
             this.Controls.Add(this.buscar);
             this.Name = "empleado";
             this.Text = "Form2";
@@ -404,9 +444,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox contraseña;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox usuario;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox categoria;
         private System.Windows.Forms.ComboBox fechaIng;
@@ -434,8 +474,13 @@
         private System.Windows.Forms.Button salir;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buscarFoto;
         private System.Windows.Forms.Button buscar;
         private System.Windows.Forms.PictureBox foto;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button imprimir;
+        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
