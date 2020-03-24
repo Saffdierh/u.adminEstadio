@@ -3,5 +3,11 @@ C:\Users\Saff\source\repos\adminEstadio\adminEstadio\obj\Debug\adminEstadio.empl
 C:\Users\Saff\source\repos\adminEstadio\adminEstadio\obj\Debug\adminEstadio.login.resources
 C:\Users\Saff\source\repos\adminEstadio\adminEstadio\obj\Debug\adminEstadio.mainWindow.resources
 C:\Users\Saff\source\repos\adminEstadio\adminEstadio\obj\Debug\adminEstadio.Properties.Resources.resources
-C:\Users\Saff\source\repos\adminEstadio\adminEstadio\obj\Debug\adminEstadio.splash.resources
 C:\Users\Saff\source\repos\adminEstadio\adminEstadio\obj\Debug\adminEstadio.csproj.GenerateResource.cache
+C:\Users\Saff\source\repos\adminEstadio\adminEstadio\bin\Debug\adminEstadio.exe.config
+C:\Users\Saff\source\repos\adminEstadio\adminEstadio\bin\Debug\adminEstadio.exe
+C:\Users\Saff\source\repos\adminEstadio\adminEstadio\bin\Debug\adminEstadio.pdb
+C:\Users\Saff\source\repos\adminEstadio\adminEstadio\obj\Debug\adminEstadio.acercaDe.resources
+C:\Users\Saff\source\repos\adminEstadio\adminEstadio\obj\Debug\adminEstadio.splashScreen.resources
+C:\Users\Saff\source\repos\adminEstadio\adminEstadio\obj\Debug\adminEstadio.exe
+C:\Users\Saff\source\repos\adminEstadio\adminEstadio\obj\Debug\adminEstadio.pdb
